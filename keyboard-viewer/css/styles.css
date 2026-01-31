@@ -1,0 +1,64 @@
+:root{
+  --bg-color: #00FF00; /* default chroma green */
+  --key-bg: linear-gradient(#ffffff,#e6e6e6);
+  --key-active: linear-gradient(#ffea8a,#ffd85a);
+  --label-color: #111;
+  --accent: #2b8cff;
+  --scale: 1;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  background:var(--bg-color);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex; align-items:flex-start; justify-content:center; padding:22px;
+}
+#app{max-width:1200px; width:100%}
+header{display:flex; align-items:baseline; gap:12px}
+header h1{margin:0; font-size:20px}
+header .tag{margin:0; color:#222; opacity:0.8}
+#controls{margin:10px 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+#controls label{font-size:13px; display:flex; gap:8px; align-items:center}
+#controls select, #controls input[type=range]{padding:6px}
+#stage{background:transparent; padding:18px; border-radius:8px; display:flex; justify-content:center}
+#keyboardContainer{transform:scale(var(--scale)); transform-origin:top left;}
+.keyboard{display:flex; flex-direction:column; gap:8px; background:rgba(255,255,255,0.02); padding:12px; border-radius:12px;}
+.row{display:flex; gap:8px}
+.key{
+  min-width:40px; height:40px; padding:6px 10px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:8px; background:var(--key-bg); color:var(--label-color); box-shadow:0 4px 0 rgba(0,0,0,0.12), inset 0 -2px 0 rgba(0,0,0,0.04);
+  font-weight:600; user-select:none; cursor:pointer; transition:transform .05s linear, box-shadow .05s linear, background .06s linear;
+}
+.key[data-w="1.5"]{min-width:60px}
+.key[data-w="2"]{min-width:90px}
+.key[data-w="2.5"]{min-width:110px}
+.key[data-w="6"]{min-width:380px}
+.key.small{min-width:32px; height:32px; font-size:13px}
+.key.active{
+  transform:translateY(3px);
+  box-shadow:none;
+  background:var(--key-active);
+}
+#help{margin-top:12px; color:#111; opacity:0.85}
+footer{margin-top:8px; color:#111; opacity:0.6}
+/* Preset specific tweaks */
+.preset-streamer .key{border-radius:10px; box-shadow:0 8px 0 rgba(0,0,0,0.15);}
+.preset-streamer .key{background:linear-gradient(180deg,#fff,#eee)}
+.preset-compact .key{border-radius:6px; font-size:14px}
+/* When labels are disabled */
+.hide-labels .key span.label{display:none}
+.hide-labels .key span.code{display:inline-block}
+.key span.meta{display:block; font-size:11px; opacity:0.6}
+.key span.code{display:none; font-size:11px; opacity:0.6}
+
+/* Make sure keyboard container is isolated so background is a solid color for chroma keying */
+#stage{background:transparent}
+
+/* Responsiveness */
+@media (max-width:720px){
+  body{padding:12px}
+  .key{min-width:34px; height:36px}
+}
