@@ -26,6 +26,9 @@ header .tag{margin:0; color:#222; opacity:0.8}
 #stage{background:transparent; padding:18px; border-radius:8px; display:flex; justify-content:center}
 #keyboardContainer{transform:scale(var(--scale)); transform-origin:top left;}
 .keyboard{display:flex; flex-direction:column; gap:8px; background:rgba(255,255,255,0.02); padding:12px; border-radius:12px;}
+.custom-row{display:flex; gap:8px; margin-bottom:8px; align-items:center; flex-wrap:wrap}
+.custom-key{min-width:36px; height:36px; padding:6px 8px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; background:linear-gradient(180deg,#f6fbff,#e6f2ff); color:var(--label-color); font-weight:700; cursor:pointer; box-shadow:0 4px 0 rgba(0,0,0,0.08);}
+.custom-key:hover{transform:translateY(2px); box-shadow:none}
 .row{display:flex; gap:8px}
 .key{
   min-width:40px; height:40px; padding:6px 10px; display:inline-flex; align-items:center; justify-content:center;

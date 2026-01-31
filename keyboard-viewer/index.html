@@ -25,6 +25,7 @@
           <option value="#FFFFFF">White</option>
           <option value="#000000">Black</option>
         </select>
+        <input id="bgColorPicker" type="color" value="#00FF00" title="Pick background color" />
       </label>
 
       <label>Scale
@@ -33,12 +34,16 @@
 
       <label><input id="showLabels" type="checkbox" checked /> Show labels</label>
 
+      <label><input id="addKeyMode" type="checkbox" /> Add clicked key to Custom Row</label>
+      <button id="clearCustom">Clear Custom Keys</button>
+
       <button id="downloadPreset">Export Preset</button>
 
     </div>
 
     <main>
       <div id="stage">
+        <div id="customRow" class="custom-row" aria-label="Custom key row"></div>
         <div id="keyboardContainer" role="application" aria-label="Keyboard visualizer"></div>
       </div>
 

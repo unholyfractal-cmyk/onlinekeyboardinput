@@ -5,6 +5,8 @@ A simple, in-browser keyboard input visualizer designed for streaming and record
 Features
 - In-browser — runs from `index.html` (no external dependencies)
 - Solid background color set via controls or CSS variable `--bg-color`
+- Background color picker + preset swatches for custom colors
+- Custom Row: toggle 'Add clicked key to Custom Row' to append keys you click; click a custom key to remove it or clear all with 'Clear Custom Keys'
 - Multiple presets (Streamer, Full, Compact)
 - Easy to customize: edit `presets.json` to add or change layouts, and `css/styles.css` for visuals
 
